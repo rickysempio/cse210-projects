@@ -2,7 +2,6 @@ using System.Runtime.CompilerServices;
 
 public class PromptGenerator
 {
-    //public List<string> _prompts;
     public List<string> _prompts = new List<string>(){
     "Have I made feel someone glad today?",
     "what was the best thing that happened to me today?",
