@@ -36,10 +36,6 @@ public class Journal
     {
         using(StreamWriter writer = new(file))
         {
-<<<<<<< HEAD
-            
-=======
->>>>>>> 730ed186893bf0d27554301b30cb4b1769f05929
         
         foreach (Entry entry in _entries)
             writer.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText}");
