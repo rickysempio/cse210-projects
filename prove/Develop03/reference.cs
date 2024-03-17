@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 class Reference
 {
     private string _book;
@@ -11,6 +13,7 @@ class Reference
         _book = book;
         _chapter = chapter;
         _verse = verse;
+       
     }
 
     public Reference(string book, int chapter, int startVerse, int endVerse)
@@ -24,7 +27,15 @@ class Reference
 
     public string GetDisplayText()
     {
-        string text = $"{_book}{_chapter}{_verse}{_endVerse}";
-        return "";
+        string text = $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        return text;
     }
+
+    public string GetDisplayText2()
+    {
+        string text = $"{_book} {_chapter}:{_verse}";
+        return text;
+    }
+    
+    
 }

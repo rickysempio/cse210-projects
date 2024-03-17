@@ -15,7 +15,7 @@ public class PromptGenerator
     
     public Random Rand = new Random();
     
-
+    
     
     public string GetRandomPrompt() 
     {

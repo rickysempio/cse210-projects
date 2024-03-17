@@ -8,7 +8,7 @@ class Word
 
     public Word(string text)
     {
-       string  _text = text;
+       _text = text;
        
         
     }
@@ -25,7 +25,7 @@ class Word
 
     public bool isHidden()
     {
-        return false;
+        return true;
     }
 
     public String GetDisplayText()
