@@ -23,17 +23,23 @@ class Program
 
         Console.WriteLine("Proverbs 3:5-6 ___ in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
 
+        //Reference myScripturures = Reference new(Reference."Proverbs 3:5-6 Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
 
-        Console.WriteLine("Press enter to constinue or type 'quit' to finish:");
+        Console.WriteLine("Press enter to constinue 'quit' to finish:");
         Console.ReadLine();
 
 
         Reference scriptureReference = new("Proverbs", 3, 5);
         Console.WriteLine(scriptureReference.GetDisplayText2());
+        
+        
 
 
         Reference scriptureReference2 = new("Proverbs", 3, 5, 6);
         Console.WriteLine(scriptureReference2.GetDisplayText());
+
+
+        
 
 
 

@@ -1,6 +1,6 @@
 using System.Security.Cryptography.X509Certificates;
 
-class Reference
+public class Reference
 {
     private string _book;
     private int _chapter;

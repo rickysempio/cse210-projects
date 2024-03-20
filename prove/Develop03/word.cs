@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-class Word
+public class Word
 {
     private string _text;
     private bool _isHidden;
