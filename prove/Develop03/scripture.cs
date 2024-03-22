@@ -1,44 +1,70 @@
 public class Scripture
 {
     private  Reference _reference;
+    private Random _ranGen = new Random();
     private List<Word> _words = new List<Word>();
 
 
-    
     public Scripture(Reference Reference, string text)
     {
-       _reference = Reference;
+        _reference = Reference;
+
+        string[] wordAry = text.Split(" ");
             
-        text = "Proverbs 3:5-6 Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
+            foreach ( string wordStr in wordAry)
+            {
+                Word wordObj  = new(wordStr);
+                _words.Add(wordObj);
+            }
 
     }
 
-    public Random Rand = new Random();
 
-    void HideRandomWords(int numberToHide)
-
+    public void HideRandomWords(int numberToHide)
     {
-        GetDisplayText();
-        //Word wordDisplayText = new();
-        //wordDisplayText.GetDisplayText();
-        
 
-        Word HideRandomWords = _words[Rand.Next(_words.Count)];
+        for (int _ = 0; _ < numberToHide; _++)
+        {
+            int index;
+            do 
+            {
+                index = _ranGen.Next(_words.Count);
 
+            }
+            while (_words[index].GetIsHidden());
+                _words[index].Hide();
+                if (IsCompletelyHidden())
+                    break;
 
-
-
-        
-
+        }
     }
     
-    public String GetDisplayText()
+
+    public void GetDisplayText()
     {
-              
-        return "";
+  
+        Console.WriteLine(_reference.GetDisplayText() + " ");
+        {
+            foreach (Word word in _words)
+            Console.Write( word.GetDisplayText()  + "  ");
+            Console.WriteLine();
+        }
+
     }
-    public bool isCompletelyHidden()
+
+
+    public bool IsCompletelyHidden()
     {
-        return false;
-    }
+        
+
+        foreach (Word word in _words)
+        {
+            if (!word.GetIsHidden())  
+            {
+                return false;
+            }
+
+        }
+        return true;
+    }   
 }

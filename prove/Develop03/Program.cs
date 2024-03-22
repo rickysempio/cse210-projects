@@ -5,62 +5,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Console.WriteLine("Hello Develop03 World!");
-        //string answer = "";
-        //string quit = "";
-
-        //while ( answer != quit)
-        //
-
-        Console.WriteLine(" Proverbs 3:5-6 Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
+        Console.WriteLine("Hello Develop03 World!");
 
 
-        Console.WriteLine("Press enter to constinue or type 'quit' to finish:");
-
-
-        Console.ReadLine();
-        Console.Clear();
-
-        Console.WriteLine("Proverbs 3:5-6 ___ in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
-
-        //Reference myScripturures = Reference new(Reference."Proverbs 3:5-6 Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
-
-        Console.WriteLine("Press enter to constinue 'quit' to finish:");
-        Console.ReadLine();
-
-
-        Reference scriptureReference = new("Proverbs", 3, 5);
-        Console.WriteLine(scriptureReference.GetDisplayText2());
-        
+        Scripture scripture = new(new Reference("Proverbs", 3, 5, 6), "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
         
 
+        while (true)
+        {
+            Console.Clear();
+            scripture.GetDisplayText();
+            Console.WriteLine();
+            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+            string input = Console.ReadLine();
 
-        Reference scriptureReference2 = new("Proverbs", 3, 5, 6);
-        Console.WriteLine(scriptureReference2.GetDisplayText());
+                if (input.ToLower()  == "quit")
+                    break;
 
+                scripture.HideRandomWords( 3 );
 
+                if (scripture.IsCompletelyHidden())
+                    break;
         
-
-
-
-
-        //hide a few words
-        
-
-        //hiding more words until all words are hidden
-
-        //when all words are all hidden the proram shoul end. 
-
-        //}
-        
-
-        //Scripture myScripture = new Scripture();
-        //myScripture.GetDisplayText();
-       
-       
-        
-        
-
-        
+        }       
     }
 }

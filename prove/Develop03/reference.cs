@@ -27,14 +27,7 @@ public class Reference
 
     public string GetDisplayText()
     {
-        string text = $"{_book} {_chapter}:{_verse}-{_endVerse}";
-        return text;
-    }
-
-    public string GetDisplayText2()
-    {
-        string text = $"{_book} {_chapter}:{_verse}";
-        return text;
+        return _endVerse == 0 ?  $"{_book} {_chapter}:{_verse}" : $"{_book} {_chapter}:{_verse}-{_endVerse}";
     }
     
     
