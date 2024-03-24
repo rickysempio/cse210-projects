@@ -1,8 +1,8 @@
 public class Activity
 {
-    private string _name;
-    private string _description;
-    private int _duration;
+    protected string _name;
+    protected string _description;
+    protected int _duration;
 
 
 
@@ -20,7 +20,7 @@ public class Activity
 
     public void DisplayStartingMessage()
     {
-        Console.WriteLine(_name);
+        Console.WriteLine($"Welcome to the {_name}");
         Console.WriteLine(_description);
         
     }
@@ -28,7 +28,8 @@ public class Activity
 
     public void DisplayEndingMessage()
     {
-        
+        Console.WriteLine("Well done...");
+        Console.WriteLine($"You have completed another {_duration} of {_name}");
     }
 
 
@@ -39,6 +40,8 @@ public class Activity
         animationStrings.Add("/");
         animationStrings.Add("-");
         animationStrings.Add("\\");
+        animationStrings.Add("|");
+        
         animationStrings.Add("/");
         animationStrings.Add("-");
         animationStrings.Add("\\");
@@ -52,7 +55,7 @@ public class Activity
         while (DateTime.Now < endTime)
         {
 	        string s = animationStrings[i];
-	        Console.Write("s");
+	        Console.Write(s);
 	        Thread.Sleep(1000);
 	        Console.Write("\b \b");
 	
@@ -65,7 +68,7 @@ public class Activity
 
 
 	
-        Console.WriteLine("Done");
+           // Console.WriteLine("Done");
         }
     }
 
@@ -74,12 +77,14 @@ public class Activity
     
     {
         for (int _duration = 5; _duration > 0; _duration--)
+        {
+	        Console.Write(_duration);
+	        Thread.Sleep(1000);
+	        Console.Write("\b \b");
 
-	    Console.Write(_duration);
-	    Thread.Sleep(6000);
-	    Console.Write("\b \b");
+        }
 
-	    Console.WriteLine("Done");
+	    Console.WriteLine();
     }
 
 }    
