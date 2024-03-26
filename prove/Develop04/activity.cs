@@ -18,6 +18,11 @@ public class Activity
         _duration = seconds;
     }
 
+    public int GetActivity()
+    {
+        return _duration;
+    }
+
     public void DisplayStartingMessage()
     {
         Console.WriteLine($"Welcome to the {_name}");
@@ -46,40 +51,47 @@ public class Activity
         animationStrings.Add("-");
         animationStrings.Add("\\");
 
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(10);
 
-
-        int i = 0;
-
-        while (DateTime.Now < endTime)
+        foreach (string s in animationStrings)
         {
-	        string s = animationStrings[i];
-	        Console.Write(s);
+            Console.Write(s);
 	        Thread.Sleep(1000);
 	        Console.Write("\b \b");
-	
-	        i++;
+        }
 
-	        if (i >= animationStrings.Count)
-	        {
-		        i = 0;
-	        }
+        //DateTime startTime = DateTime.Now;
+        //DateTime endTime = startTime.AddSeconds(10);
+
+
+       // int i = 0;
+
+        //while (DateTime.Now < endTime)
+        //{
+	       // string s = animationStrings[i];
+	        //Console.Write(s);
+	        //Thread.Sleep(1000);
+	        //Console.Write("\b \b");
+	
+	        //i++;
+
+	        //if (i >= animationStrings.Count)
+	        //{
+		       // i = 0;
+	        //}
 
 
 	
            // Console.WriteLine("Done");
-        }
+        //}
     }
 
-    public void ShowCountDown(int seconds)
+    public void ShowCountDown(int seconds)   
 
-    
     {
-        for (int _duration = 5; _duration > 0; _duration--)
+        for (int i = 5; i > 0; i--)
         {
-	        Console.Write(_duration);
-	        Thread.Sleep(1000);
+	        Console.Write(i);
+	        Thread.Sleep(1500);
 	        Console.Write("\b \b");
 
         }

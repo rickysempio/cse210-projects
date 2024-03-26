@@ -28,6 +28,7 @@ class Program
 
             Console.Write("How long, in seconds, would you like for your session? ");
             string  countdown = Console.ReadLine();
+            int _duration = int.Parse(countdown);
 
             Console.WriteLine("Get ready...");
             _breathing.ShowSpinner(5);
@@ -64,7 +65,7 @@ class Program
 
             Console.WriteLine();
             Console.Write("How long, in seconds, would you like for your session? ");
-            string  countdown = Console.ReadLine();
+            string  _duration = Console.ReadLine();
 
             Console.WriteLine("Get ready...");
             _reflecting.ShowSpinner(5);
@@ -100,7 +101,8 @@ class Program
 
             Console.WriteLine();
             Console.Write("How long, in seconds, would you like for your session? ");
-            string  countdown = Console.ReadLine();
+            string  _duration = Console.ReadLine();
+
 
             Console.WriteLine("Get ready...");
             _listing.ShowSpinner(5);
