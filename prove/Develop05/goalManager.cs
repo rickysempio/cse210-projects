@@ -21,14 +21,14 @@ public class GoalManager
 
     }
 
-    public void ListGoalName()
-    {
+    //public void ListGoalName()
+    //{
         
-    }
+    //}
 
     public void ListGoalDetails()
     {
-            
+        
 
     }
 

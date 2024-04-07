@@ -26,17 +26,17 @@ public abstract class Goal
 
     public abstract string GetStringRepresentation();
 
-    public virtual void SetNameDescriptionPoints()
-    {
-        Console.WriteLine("What is the name of your goal? "); 
-        _shortName = Console.ReadLine();
+    //public virtual void SetNameDescriptionPoints()
+    //{
+        //Console.WriteLine("What is the name of your goal? "); 
+        //_shortName = Console.ReadLine();
 
-        Console.WriteLine("What is the description? ");
-        _description = Console.ReadLine();
+       // Console.WriteLine("What is the description? ");
+        //_description = Console.ReadLine();
 
-        Console.WriteLine($"what is the amount of points associated with this goal");
-        _points = int.Parse(Console.ReadLine());
-    }
-    
+        //Console.WriteLine($"what is the amount of points associated with this goal");
+        //_points = int.Parse(Console.ReadLine());
+    //}
+
     
 }

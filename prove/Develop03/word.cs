@@ -17,6 +17,7 @@ public class Word
        }
     }
 
+
     public void Hide()
     {
         _isHidden = true;
