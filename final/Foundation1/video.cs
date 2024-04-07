@@ -16,21 +16,9 @@ public class Video
 
     public string DisplayNumberOfComments()
     {
-       foreach (CommentList comment in _commentList)
-       {
-        
+        int count = _commentList.Count;
 
-        Console.WriteLine(comment._commentText);
-        _numberOfComments = 0;
-
-            if (comment._commentText == "")
-            {
-                _numberOfComments ++;
-            }
-
-        }
-
-     return ($"Total Number of Comments: {_numberOfComments}");
+     return ($"Total Number of Comments: {count}");
     }
 
 }
