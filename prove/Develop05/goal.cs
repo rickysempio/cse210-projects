@@ -15,13 +15,49 @@ public abstract class Goal
         _points = points;
     }
 
+
+    public string GetShortName()
+    {
+        return _shortName;
+    }
+
+    public void SetShortName(string shortName)
+    {
+        _shortName = shortName;
+    }
+    public void SetDescription(string description)
+    {
+        _description = description;
+    }
+
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    public int GetPoints()
+    {
+        return _points;
+    }
+
+    public void SetPoints(int points)
+    {
+        _points = points;
+        
+    }
+
+
+
     public abstract void RecordEvent();
     
 
-    public abstract bool isComplete();
+    public abstract bool IsComplete();
     
     
-    public abstract string GetDetailsString();
+    public virtual string GetDetailsString()
+    {
+        return ""; 
+    }
 
 
     public abstract string GetStringRepresentation();

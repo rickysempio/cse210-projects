@@ -7,11 +7,11 @@ class Program
     {
         GoalManager gm = new GoalManager(0);
 
-        string userChoice = "";
+        string userChoice ="";
 
         while(userChoice != "6")
         {
-            Console.WriteLine($"You have 0 goal");
+            Console.WriteLine($"You have {0} goal");
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create New Goal");
@@ -32,21 +32,26 @@ class Program
 
             else if (userChoice == "2")
             {
-                Console.WriteLine("List goals");
-
-            
-
+                
+                gm.ListGoalDetails();
+        
             }
 
             else if (userChoice == "3")
             {
-                Console.WriteLine("Save goals");
+                Console.WriteLine("Filename: ");
+                string file = Console.ReadLine();
+                gm.SaveGoalsToFile(file);
             }
 
             else if (userChoice == "4")
             {
-                Console.WriteLine("Load goals");
+                Console.WriteLine("Filename: ");
+                string file = Console.ReadLine();
+                //gm.LoadGoals(file);
             }
+
+            
 
             else if (userChoice == "5")
             {

@@ -1,10 +1,10 @@
 using System.Collections.Concurrent;
 
-public abstract class ChecklistGoal : Goal
+public  class ChecklistGoal : Goal
 {
     private int _amountCompleted;
     private int _target;
-    private int _bonus;
+    private int _bonus ;
     private bool _iscomplete;
 
 
@@ -19,9 +19,9 @@ public abstract class ChecklistGoal : Goal
         _iscomplete = true;
     }
 
-    public override bool isComplete()
+    public override bool IsComplete()
     {
-        return _iscomplete;
+        return _iscomplete = false;
     }
 
     public override string  GetDetailsString()

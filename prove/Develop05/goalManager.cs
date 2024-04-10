@@ -1,11 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlTypes;
+using System.Runtime.CompilerServices;
+using System.IO;
+
 
 
 public class GoalManager 
 {
     private List<Goal> _goals = new List<Goal>();
-    private int _score;
+    private int _score = 0;
+
     public GoalManager( int score)
     {
         _score = score;
@@ -29,7 +33,10 @@ public class GoalManager
     public void ListGoalDetails()
     {
         
-
+        foreach (Goal goal in _goals)
+        {
+            Console.WriteLine(goal.GetStringRepresentation());
+        }
     }
 
     public void CreateGoal()
@@ -44,9 +51,7 @@ public class GoalManager
         if (goalType == "1")
         {
             Console.WriteLine("What is the name of your goal? "); 
-            string shortName = Console.ReadLine();
-            
-            
+            string  shortName = Console.ReadLine();
 
             Console.WriteLine("What is the description? ");
             string description = Console.ReadLine();
@@ -54,8 +59,9 @@ public class GoalManager
             Console.WriteLine($"what is the amount of points associated with this goal");
             int points = int.Parse(Console.ReadLine());
 
-           SimpleGoal sg = new SimpleGoal(shortName, description, points);
-           sg.GetStringRepresentation();
+            SimpleGoal sg = new SimpleGoal(shortName, description, points);
+            sg.GetStringRepresentation();
+            _goals.Add(sg);
             
         }            
 
@@ -72,6 +78,7 @@ public class GoalManager
 
             EternalGoal eg = new EternalGoal(shortName, description, points);
             eg.GetStringRepresentation();
+            _goals.Add(eg);
 
         }
 
@@ -92,8 +99,9 @@ public class GoalManager
             Console.WriteLine($"What is the bonus for acomplishing it that many times?");
             int bonus = int.Parse(Console.ReadLine());
 
-            //ChecklistGoal cg = new ChecklistGoal(shortName, description, points);
-            //cg.GetStringRepresentation();
+            ChecklistGoal cg = new ChecklistGoal(shortName, description, points, bonus);
+            cg.GetStringRepresentation();
+            _goals.Add(cg);
         }
 
         else 
@@ -111,13 +119,27 @@ public class GoalManager
 
     }
 
-    public void SaveGoals()
+    public void SaveGoalsToFile(string file)
     {
-
+        using(StreamWriter writer = new(file))
+        {
+        foreach (Goal goal in _goals)
+            writer.WriteLine($"{goal.GetShortName}|{goal.GetDescription}|{goal.GetPoints}");
+        }
     }
+
 
     public void LoadGoals()
     {
+        //_goals.Clear();
+        //string[] lines = File.ReadAllLines(file);
 
+        //foreach (String line in lines)
+        //{
+            //string [] parts = line.Split("|");
+            
+     
+        //}
     }
-}
+}   
+

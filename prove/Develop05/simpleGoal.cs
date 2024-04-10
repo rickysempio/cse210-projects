@@ -15,16 +15,18 @@ public class SimpleGoal : Goal
         _isComplete = true;
     }
 
-    public override bool isComplete()
+    public override bool IsComplete()
     {
-            return _isComplete;
+            return _isComplete = false;
+
     }
 
+    //public override string GetDetailsString()
+    //{
+        //return "";
+    //}
 
-    public override string GetDetailsString()
-    {
-        return "";
-    }
+
     public override string GetStringRepresentation()
     {
         //Console.WriteLine("The goals are :");

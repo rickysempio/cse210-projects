@@ -18,14 +18,14 @@ public class EternalGoal : Goal
 
     }
 
-    public override string GetDetailsString()
-    {
-        return "";
-    }
+    //public override string GetDetailsString()
+    //{
+        //return "";
+    //}
 
-    public override bool isComplete()
+    public override bool IsComplete()
     {
-        return _isComplete;
+        return _isComplete = false;
     }
 
     public override string GetStringRepresentation()
